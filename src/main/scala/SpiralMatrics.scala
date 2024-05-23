@@ -10,9 +10,9 @@ class SpiralMatrix(sideSize: Int){
         if (adjustSize) {
           amountOfAdjustments = (sideSize*sideSize).toString.length - (matrix(i)(j).toString.length)
         }
-        println(s" res${adjustChar * amountOfAdjustments}res")
-        println(adjustChar * amountOfAdjustments + matrix(i)(j) + adjustChar)
+        print(adjustChar.toString * amountOfAdjustments + matrix(i)(j) + adjustChar)
       }
+      println()
     }
   }
 
@@ -27,7 +27,6 @@ class SpiralMatrix(sideSize: Int){
     var value = 1
     val matrix = Array.ofDim[Int](n, n)
     while (value <= n * n ){
-      //println(s"v=$value x=$x y=$y d=$direction")
       matrix(x)(y) = value
       value += 1
       if (direction == 0) {
