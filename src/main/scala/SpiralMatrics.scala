@@ -10,14 +10,16 @@ class SpiralMatrix(private var sideSize: Int){
 
   def getSize(): Int = sideSize
 
-  def printMatrix(adjustSize: Boolean = false, adjustChar: Char = ' '): Unit = {
+  def printMatrix(adjustSize: Boolean = false, adjustChar: Char = ' ', separator: String = " "): Unit = {
     var amountOfAdjustments = 0
     for (i <- 0 until sideSize){
       for (j <- 0 until sideSize){
         if (adjustSize) {
           amountOfAdjustments = (sideSize*sideSize).toString.length - (matrix(i)(j).toString.length)
         }
-        print(adjustChar.toString * amountOfAdjustments + matrix(i)(j) + adjustChar)
+        print(adjustChar.toString * amountOfAdjustments + matrix(i)(j))
+        if (j != sideSize - 1) print(separator)
+
       }
       println()
     }
