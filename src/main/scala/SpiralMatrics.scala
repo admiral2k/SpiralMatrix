@@ -34,7 +34,8 @@ class SpiralMatrix(private var sideSize: Int){
     var value = 1
     val matrix = Array.ofDim[Int](n, n)
     while (value <= n * n ){
-      matrix(x)(y) = value
+      //  matrix(x)(y) was rewritten to matrix(y)(x) because the first index indicates rows and the second index indicates columns
+      matrix(y)(x) = value
       value += 1
       if (direction == 0) {
         x += 1
