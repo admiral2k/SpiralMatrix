@@ -1,7 +1,7 @@
 class SpiralMatrix(private var sideSize: Int){
   private var matrix = makeSpiral(sideSize)
 
-  def toArray(): Array[Array[Int]] = matrix
+  def toArray: Array[Array[Int]] = matrix
 
   def setSize(sideSize: Int): Unit = {
     this.sideSize = sideSize
@@ -22,6 +22,8 @@ class SpiralMatrix(private var sideSize: Int){
       println()
     }
   }
+
+  def apply(row: Int): Array[Int] = matrix(row)
 
   private def makeSpiral(n: Int): Array[Array[Int]] = {
     var leftBorderX = 0
